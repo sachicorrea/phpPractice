@@ -95,15 +95,15 @@
          <div class="mb-3" id="flightClass"> 
             <label>Class
                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flight_class" <?php if(isset($flight_class) && $flight_class=="tourist") echo "checked";?> value="tourist">Tourist
+                  <input class="form-check-input" type="radio" name="flight_class" <?php if(isset($flight_class) && $flight_class=="tourist") echo "checked";?> value="tourist" required>Tourist
                </div>
 
                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flight_class" <?php if(isset($flight_class) && $flight_class=="first_class") echo "checked";?> value="first_class">First Class
+                  <input class="form-check-input" type="radio" name="flight_class" <?php if(isset($flight_class) && $flight_class=="first_class") echo "checked";?> value="first_class" required>First Class
                </div>
 
                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flight_class" <?php if(isset($flight_class) && $flight_class=="executive") echo "checked";?> value="executive">Executive
+                  <input class="form-check-input" type="radio" name="flight_class" <?php if(isset($flight_class) && $flight_class=="executive") echo "checked";?> value="executive" required>Executive
                </div>
                
                <div class="valid-feedback">Valid</div>
@@ -127,15 +127,15 @@
          
          <div class="form-group">
             <label for="email">Name</label>
-            <input type="text" class="form-control" placeholder="Your Name" name="name">
+            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
             <div class="valid-feedback">Valid</div>
             <div class="invalid-feedback">Please fill out this field</div>
          </div>
 
          <div class="form-group">
             <label for="email">Age</label>
-            <input type="number" class="form-control" placeholder="Age" name="age">
-            <div class="valid-feedback">Valid</div>
+            <input type="number" class="form-control" placeholder="Age" name="age" required>
+            <div class="valid-feedback" >Valid</div>
             <div class="invalid-feedback">Please fill out this field</div>
          </div>
          
