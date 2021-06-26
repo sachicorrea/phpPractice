@@ -27,6 +27,16 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
    <title>Flights</title>
+
+   <style>
+        #flight-result {
+            display: none;
+        }
+
+        .error {
+            border: 1px solid red;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,12 +46,12 @@
 
          <p>La empresa de transporte aéreo “Aerolíneas Manizales” ha establecido la siguiente tabla de tarifas para los destinos.</p>
          <ul>
-               <li>Manizales – Neiva y viceversa $ 347.000</li>
-               <li>Manizales – Pereira y viceversa $ 360.000</li>
-               <li>Manizales – Pasto y viceversa $ 382.000</li>
-               <li>Neiva – Pereira y viceversa $ 375.000</li>
-               <li>Neiva – Pasto y viceversa $ 392.000</li>
-               <li>Pereira – Pasto y viceversa $ 408.000</li>
+            <li>Manizales – Neiva y viceversa $ 347.000</li>
+            <li>Manizales – Pereira y viceversa $ 360.000</li>
+            <li>Manizales – Pasto y viceversa $ 382.000</li>
+            <li>Neiva – Pereira y viceversa $ 375.000</li>
+            <li>Neiva – Pasto y viceversa $ 392.000</li>
+            <li>Pereira – Pasto y viceversa $ 408.000</li>
          </ul>
          <p class="fw-bold">Nota. Estas tarifas aplican para clase turista.</p>
          <p class="fw-bold">En primera clase, se le debe incrementar el 20% a la tarifa.</p>
@@ -50,14 +60,14 @@
          <p>En caso contrario tendrá un 15% de descuento.</p>
          <p>Adicional a esto, la aerolínea ofrece los siguientes servicios a módicos precios.</p>
          <ul>
-               <li>Alimentación. $25000</li>
-               <li>Internet. $ 5000</li>
-               <li>Maletero. $ 4000</li>
+            <li>Alimentación $25000</li>
+            <li>Internet $ 5000</li>
+            <li>Maletero $ 4000</li>
          </ul>
          <p>Se debe crear la siguiente interfaz, y en las listas de las ciudades se mostraran las siguientes tanto en origen como destino.</p>
       </div>
 
-      <form method="post" action="flightsForm.php" class="needs-validation" novalidate>
+      <form id="flight-form" method="POST" action="flightsForm.php" class="needs-validation" novalidate>
          <div class="mb-3">
             <label>Your origin</label>
             <select name="origin">
@@ -142,10 +152,21 @@
          <!--<span class="error">* <?php echo $age_error; ?></span>-->
          <br>
 
-         <button type="submit" class="btn btn-success">Submit</button>
+         <button id="ajax-submit" type="button" class="btn btn-success">Submit</button>
       </form>
       <br>
+
+      <div id="flight-result">
+        <p>Flight's cost: <span id="flight-cost"></span></p>
+        <p>Increasing: <span id="class-increasing"></span></p>
+        <p>Services cost: <span id="services-cost"></span></p>
+        <p>Discount for age: <span id="age-discount"></span></p>
+        <p>Discount for age: <span id="total-flight"></span></p>
+      </div>
    </div>
+
+   <!-- Script 8th activity -->
+   <script src="script8.js"></script>
 
    <script>
       // Disable form submissions if there are invalid fields
